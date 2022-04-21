@@ -1,6 +1,7 @@
 import classes from "./CartButton.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
+import { FaShoppingCart } from "react-icons/fa";
 
 const CartButton = (props) => {
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
@@ -11,7 +12,9 @@ const CartButton = (props) => {
   };
   return (
     <button className={classes.button} onClick={cartToggleHandler}>
-      <span>My Cart</span>
+      <span>
+        <FaShoppingCart />
+      </span>
       <span className={classes.badge}>{cartQuantity}</span>
     </button>
   );

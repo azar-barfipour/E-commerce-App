@@ -21,6 +21,7 @@ function App() {
         "https://udemy-redux-99e3b-default-rtdb.firebaseio.com/cart.json"
       );
       const data = await res.json();
+      console.log(data);
       dispatch(cartActions.replaceCart(data));
     };
     getData();
@@ -66,13 +67,13 @@ function App() {
 
   return (
     <Layout>
-      {notification && (
+      {/* {notification && (
         <Notification
           status={notification.status}
           error={notification.error}
           title={notification.message}
         />
-      )}
+      )} */}
       {cartVisible && <Cart />}
       <Products />
     </Layout>
