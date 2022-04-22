@@ -14,8 +14,19 @@ const Products = () => {
       const res = await fetch(
         "https://udemy-redux-99e3b-default-rtdb.firebaseio.com/shoppingItems.json"
       );
-      const data = await res.json();
-      setShoppingItems(data);
+      let data = await res.json();
+      data = data.items;
+      let loadedShoppingItems = [];
+      for (let key in data) {
+        loadedShoppingItems.push({
+          id: key,
+          name: data[key].name,
+          price: data[key].price,
+          description: data[key].description,
+          imageUrl: data[key].imageUrl,
+        });
+      }
+      setShoppingItems(loadedShoppingItems);
     };
     fetchShoppingData();
   }, []);
@@ -23,8 +34,8 @@ const Products = () => {
     <section className={classes.products}>
       <h2>Buy your favorite products</h2>
       <ul className={classes["products__list"]}>
-        {shoppingItems.items &&
-          shoppingItems.items.map((product) => {
+        {shoppingItems &&
+          shoppingItems.map((product) => {
             return (
               <ProductItem
                 key={product.id}

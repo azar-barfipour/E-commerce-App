@@ -1,12 +1,11 @@
 .item {
-  margin: 1rem 0;
-  background-color: #575757;
+  margin: 1rem;
   padding: 1rem;
+  border-bottom: 1px solid #fff;
 }
 
 .item h3 {
   margin: 0 0 0.5rem 0;
-  font-size: 1.75rem;
 }
 
 .item header {
@@ -22,12 +21,10 @@
 }
 
 .quantity span {
-  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .price {
-  font-size: 1.5rem;
   font-weight: bold;
 }
 

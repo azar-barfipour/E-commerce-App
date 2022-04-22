@@ -1,11 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
-import Cart from "./components/Cart/Cart";
-import Layout from "./components/Layout/Layout";
-import Products from "./components/Shop/Products";
+import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { uiActions } from "./store/ui-slice";
 import { cartActions } from "./store/cart-slice";
-import Notification from "./components/UI/Notification";
+
+import Cart from "./components/Cart/Cart";
+import Layout from "./components/Layout/Layout";
+import Products from "./components/Shop/Products";
+import ProductDetail from "./components/Shop/ProductDetail";
 
 let isInitial = true;
 
@@ -13,7 +15,6 @@ function App() {
   const cartVisible = useSelector((state) => state.ui.cartShow);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const notification = useSelector((state) => state.ui.notification);
 
   useEffect(() => {
     const getData = async () => {
@@ -67,15 +68,11 @@ function App() {
 
   return (
     <Layout>
-      {/* {notification && (
-        <Notification
-          status={notification.status}
-          error={notification.error}
-          title={notification.message}
-        />
-      )} */}
+      <Routes>
+        <Route path="/" element={<Products />} />
+        <Route path="/detail/:productId" element={<ProductDetail />} />
+      </Routes>
       {cartVisible && <Cart />}
-      <Products />
     </Layout>
   );
 }

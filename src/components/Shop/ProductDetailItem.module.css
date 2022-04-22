@@ -1,0 +1,36 @@
+.detail-wrapper {
+  background-color: #fff;
+  width: 80%;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.detail-wrapper_img {
+  margin-right: 2rem;
+}
+.detail_img {
+  width: 100%;
+  min-width: 20rem;
+  max-width: 40rem;
+}
+.detail-wrapper_info {
+  display: flex;
+  justify-content: space-around;
+}
+.detail_title {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 80rem) {
+  .detail-wrapper {
+    display: block;
+  }
+  .detail-wrapper_info {
+    display: block;
+  }
+  .detail-wrapper_all-info {
+    padding: 2rem;
+  }
+}
