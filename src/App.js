@@ -8,6 +8,7 @@ import Cart from "./components/Cart/Cart";
 import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
 import ProductDetail from "./components/Shop/ProductDetail";
+import Login from "./components/Auth/Login";
 
 let isInitial = true;
 
@@ -71,6 +72,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Products />} />
         <Route path="/detail/:productId" element={<ProductDetail />} />
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
       {cartVisible && <Cart />}
     </Layout>

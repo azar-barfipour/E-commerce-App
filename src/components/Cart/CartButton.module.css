@@ -6,7 +6,7 @@
 
 .button:hover,
 .button:active {
-  color: white;
+  transform: scale(1.5);
 }
 
 .button span {

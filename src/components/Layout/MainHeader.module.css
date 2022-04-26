@@ -12,8 +12,28 @@
   color: rgb(48, 56, 65);
 }
 
-.header ul {
+.header-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+}
+.header-login {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: #1d1d1d;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.header-login:hover {
+  transform: scale(1.5);
+}
+.header-login__active {
+  background-color: rgb(125, 122, 108);
+  color: #fff;
+}
+.header-login__link {
+  text-decoration: none;
 }
