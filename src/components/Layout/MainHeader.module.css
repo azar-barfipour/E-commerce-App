@@ -52,3 +52,9 @@
   background-color: rgb(125, 122, 108);
   color: #fff;
 }
+
+@media (max-width: 40rem) {
+  .header h1 {
+    display: none;
+  }
+}

@@ -2,10 +2,11 @@ import ProductItem from "./ProductItem";
 import classes from "./Products.module.css";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [shoppingItems, setShoppingItems] = useState([]);
-
+  const login = useSelector((state) => state.login.isLoggedIn);
   useEffect(() => {
     const fetchShoppingData = async () => {
       const res = await fetch(
@@ -29,6 +30,7 @@ const Products = () => {
   }, []);
   return (
     <section className={classes.products}>
+      {login && <Link to="/new-products">Add Products</Link>}
       <ul className={classes["products__list"]}>
         {shoppingItems &&
           shoppingItems.map((product) => {
