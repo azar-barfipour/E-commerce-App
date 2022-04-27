@@ -28,12 +28,27 @@
   cursor: pointer;
 }
 .header-login:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 .header-login__active {
   background-color: rgb(125, 122, 108);
   color: #fff;
 }
-.header-login__link {
+.header-link {
   text-decoration: none;
+}
+.header-home {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: #1d1d1d;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.header-home:hover {
+  transform: scale(1.2);
+}
+.header-home__active {
+  background-color: rgb(125, 122, 108);
+  color: #fff;
 }
