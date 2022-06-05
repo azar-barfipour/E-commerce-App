@@ -14,8 +14,6 @@ const Login = () => {
       <Route path="/redirect" element={<Navigate to="/" />} />;
       dispatch(loginActions.login(true));
     }
-
-    console.log(auth.currentUser);
   };
 
   return (

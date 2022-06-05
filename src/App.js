@@ -9,7 +9,6 @@ import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
 import ProductDetail from "./components/Shop/ProductDetail";
 import Login from "./components/Auth/Login";
-import NewProductsForm from "./components/NewProducts/NewProductsForm";
 
 let isInitial = true;
 
@@ -24,7 +23,6 @@ function App() {
         "https://udemy-redux-99e3b-default-rtdb.firebaseio.com/cart.json"
       );
       const data = await res.json();
-      console.log(data);
       dispatch(cartActions.replaceCart(data));
     };
     getData();
@@ -40,7 +38,7 @@ function App() {
         })
       );
       try {
-        const res = await fetch(
+        await fetch(
           "https://udemy-redux-99e3b-default-rtdb.firebaseio.com/cart.json",
           { method: "PUT", body: JSON.stringify(cart) }
         );
@@ -74,7 +72,6 @@ function App() {
         <Route path="/" element={<Products />} />
         <Route path="/detail/:productId" element={<ProductDetail />} />
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/new-products" element={<NewProductsForm />}></Route>
       </Routes>
       {cartVisible && <Cart />}
     </Layout>
