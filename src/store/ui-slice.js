@@ -7,6 +7,7 @@ const UiSlice = createSlice({
   reducers: {
     toggleCart(state) {
       state.cartShow = !state.cartShow;
+      console.log(state.cartShow);
     },
     notificationAlert(state, action) {
       state.notification = {

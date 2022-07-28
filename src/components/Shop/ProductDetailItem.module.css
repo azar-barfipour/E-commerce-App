@@ -6,6 +6,11 @@
   grid-template-columns: 50% 50%;
   border-radius: 0.5rem;
   padding: 1rem;
+  cursor: zoom-in;
+}
+.detail-wrapper-info {
+  width: 50%;
+  margin: 2rem auto;
 }
 .detail-wrapper_img {
   margin-right: 2rem;
@@ -15,14 +20,17 @@
   min-width: 20rem;
   max-width: 40rem;
 }
-.detail-wrapper_info {
-  display: flex;
-  justify-content: space-around;
-}
+
 .detail_title {
   font-weight: bold;
 }
-
+.buttons {
+  margin: 3rem auto;
+}
+.amount {
+  display: inline-block;
+  margin: 0 1rem;
+}
 @media screen and (max-width: 80rem) {
   .detail-wrapper {
     display: block;

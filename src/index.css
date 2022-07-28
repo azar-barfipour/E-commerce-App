@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;700&family=Lato:wght@300&family=Poppins:ital,wght@0,100;0,300;0,400;1,600&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   margin: 0;
-  background-color: rgb(215, 207, 187);
+  background-color: rgb(196, 228, 249);
 }

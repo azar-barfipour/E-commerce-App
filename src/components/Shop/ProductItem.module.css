@@ -19,9 +19,6 @@
 .img-wrapper {
   margin: 1rem auto;
 }
-.img-wrapper:hover {
-  /* transform: scale(2); */
-}
 
 .card-image {
   width: 300px;
@@ -33,6 +30,9 @@
   left: 0.5rem;
   border: none;
   background-color: transparent;
+}
+.cart:hover {
+  transform: scale(1.5);
 }
 .link {
   text-decoration: none;

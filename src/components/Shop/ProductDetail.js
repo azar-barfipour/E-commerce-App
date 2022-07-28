@@ -23,6 +23,7 @@ const ProductDetail = () => {
       {productDetail && (
         <ProductDetailItem
           key={productDetail.id}
+          id={productDetail.id}
           name={productDetail.name}
           price={productDetail.price}
           description={productDetail.description}

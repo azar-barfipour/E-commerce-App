@@ -2,21 +2,24 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCzVQOin3DE-o2JaPw1cOj5SW50LtFW1WY",
-  authDomain: "udemy-redux-99e3b.firebaseapp.com",
-  databaseURL: "https://udemy-redux-99e3b-default-rtdb.firebaseio.com",
-  projectId: "udemy-redux-99e3b",
-  storageBucket: "udemy-redux-99e3b.appspot.com",
-  messagingSenderId: "906869383835",
-  appId: "1:906869383835:web:8123709c154cae27db9c3e",
-  measurementId: "G-CCNSPNYEEY",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  databaseURL: process.env.REACT_APP_databaseURL,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+  measurementId: process.env.REACT_APP_measurementId,
 };
-
+console.log(firebaseConfig);
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+console.log(app);
 export const auth = getAuth(app);
 
 const provider = new GoogleAuthProvider();
+
+console.log(provider);
 
 export const sighIn = () => {
   signInWithPopup(auth, provider)

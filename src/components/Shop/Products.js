@@ -1,9 +1,12 @@
 import ProductItem from "./ProductItem";
 import classes from "./Products.module.css";
 import { useState, useEffect } from "react";
+import Slider from "../Slider/Slider";
+import SearchProducts from "../Search/SearchProducts";
 
 const Products = () => {
   const [shoppingItems, setShoppingItems] = useState([]);
+  const [filtered, setFiltered] = useState("");
   useEffect(() => {
     const fetchShoppingData = async () => {
       const res = await fetch(
@@ -25,24 +28,44 @@ const Products = () => {
     };
     fetchShoppingData();
   }, []);
+
   return (
-    <section className={classes.products}>
-      <ul className={classes["products__list"]}>
-        {shoppingItems &&
-          shoppingItems.map((product) => {
-            return (
-              <ProductItem
-                key={product.id}
-                id={product.id}
-                title={product.name}
-                price={product.price}
-                description={product.description}
-                imageUrl={product.imageUrl}
-              />
-            );
-          })}
-      </ul>
-    </section>
+    <>
+      <Slider />
+      <SearchProducts
+        shoppingItems={shoppingItems}
+        onSetFiltered={setFiltered}
+      />
+      <section className={classes.products}>
+        <ul className={classes["products__list"]}>
+          {filtered
+            ? filtered.map((product) => {
+                return (
+                  <ProductItem
+                    key={product.id}
+                    id={product.id}
+                    title={product.name}
+                    price={product.price}
+                    description={product.description}
+                    imageUrl={product.imageUrl}
+                  />
+                );
+              })
+            : shoppingItems?.map((product) => {
+                return (
+                  <ProductItem
+                    key={product.id}
+                    id={product.id}
+                    title={product.name}
+                    price={product.price}
+                    description={product.description}
+                    imageUrl={product.imageUrl}
+                  />
+                );
+              })}
+        </ul>
+      </section>
+    </>
   );
 };
 

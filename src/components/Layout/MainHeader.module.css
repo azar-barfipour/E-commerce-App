@@ -5,11 +5,29 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image: url("https://thumbs.dreamstime.com/b/background-stylized-abstract-indian-islamic-persian-arabic-rosettes-vector-seamless-pattern-silver-mandalas-traditional-112614184.jpg");
+  background-color: rgb(255, 255, 255);
 }
 
-.header h1 {
-  color: rgb(48, 56, 65);
+.header__icon {
+  font-size: 2rem;
+  color: rgb(66, 47, 2);
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+.header__icon:hover,
+.header__icon:focus,
+.header__icon:active {
+  -webkit-transform: skew(-10deg);
+  transform: skew(-10deg);
 }
 
 .header-list {
@@ -28,16 +46,17 @@
   cursor: pointer;
 }
 .header-login:hover {
-  transform: scale(1.2);
+  background-color: rgb(0, 150, 255);
+  color: #fff;
 }
 .header-login__active {
-  background-color: rgb(125, 122, 108);
+  background-color: rgb(0, 150, 255);
   color: #fff;
 }
 .header-link {
   text-decoration: none;
 }
-.header-home {
+.header-item {
   background-color: #fff;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -45,12 +64,54 @@
   margin-left: 1rem;
   cursor: pointer;
 }
-.header-home:hover {
-  transform: scale(1.2);
+
+.header-item {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-.header-home__active {
-  background-color: rgb(125, 122, 108);
-  color: #fff;
+.header-item:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #023b55;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.header-item:hover,
+.header-item:focus,
+.header-item:active {
+  color: white;
+}
+.header-item__active {
+  background: #0d7cb0;
+  color: white;
+}
+.header-item:hover:before,
+.header-item:focus:before,
+.header-item:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 @media (max-width: 40rem) {

@@ -1,50 +1,58 @@
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { FaShoppingCart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Card from "../UI/Card";
 import classes from "./ProductItem.module.css";
+import { backgroundActions } from "../../store/background-slice";
 
 const ProductItem = (props) => {
   const { id, title, price, imageUrl } = props;
-  const cartDespatch = useDispatch();
+  const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.login.isLoggedIn);
+  const navigate = useNavigate();
+
   const addToCartHandler = () => {
-    cartDespatch(
-      cartActions.addToCart({
-        id,
-        title,
-        price,
-      })
-    );
+    if (isLogin) {
+      dispatch(
+        cartActions.addToCart({
+          id,
+          title,
+          price,
+        })
+      );
+    } else {
+      dispatch(
+        backgroundActions.setBackground(
+          "https://c4.wallpaperflare.com/wallpaper/163/916/916/cat-look-fluffy-persian-cat-wallpaper-preview.jpg"
+        )
+      );
+      navigate("/login");
+    }
   };
   return (
     <>
-      {isLogin ? (
-        <Link to={`/detail/${id}`} className={classes.link}>
-          <Card>
-            <li className={classes.item}>
-              <div className={classes["img-wrapper"]}>
-                <img
-                  src={imageUrl}
-                  alt="handy-craft"
-                  className={classes["card-image"]}
-                ></img>
-              </div>
-              <div className={classes.actions}>
-                <p className={classes.title}>{title}</p>
-                <div className={classes.price}>${price.toFixed(2)}</div>
-              </div>
-              <button onClick={addToCartHandler} className={classes.cart}>
-                <FaShoppingCart />
-              </button>
-            </li>
-          </Card>
-        </Link>
-      ) : (
-        ""
-      )}
+      <Card>
+        <li className={classes.item}>
+          <Link to={`/detail/${id}`} className={classes.link}>
+            <div className={classes["img-wrapper"]}>
+              <img
+                src={imageUrl}
+                alt="handy-craft"
+                className={classes["card-image"]}
+              ></img>
+            </div>
+            <div className={classes.actions}>
+              <p className={classes.title}>{title}</p>
+              <div className={classes.price}>${price.toFixed(2)}</div>
+            </div>
+          </Link>
+          <button onClick={addToCartHandler} className={classes.cart}>
+            <FaShoppingCart />
+          </button>
+        </li>
+      </Card>
     </>
   );
 };

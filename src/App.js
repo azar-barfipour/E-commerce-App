@@ -1,6 +1,6 @@
-import { useSelector, useDispatch } from "react-redux";
-import { Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useSelector, useDispatch, ReactReduxContext } from "react-redux";
+import { Routes, Route, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { uiActions } from "./store/ui-slice";
 import { cartActions } from "./store/cart-slice";
 
@@ -15,6 +15,7 @@ let isInitial = true;
 function App() {
   const cartVisible = useSelector((state) => state.ui.cartShow);
   const cart = useSelector((state) => state.cart);
+  const background = useSelector((state) => state.background.background);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -68,12 +69,21 @@ function App() {
 
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="/detail/:productId" element={<ProductDetail />} />
-        <Route path="/login" element={<Login />}></Route>
-      </Routes>
-      {cartVisible && <Cart />}
+      <div
+        style={{
+          backgroundImage: `url(${background})`,
+          height: "800px",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route path="/detail/:productId" element={<ProductDetail />} />
+          <Route path="/login" element={<Login />}></Route>
+        </Routes>
+        {cartVisible && <Cart />}
+      </div>
     </Layout>
   );
 }
