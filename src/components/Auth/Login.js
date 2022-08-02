@@ -2,7 +2,7 @@ import { sighIn } from "./Firebase";
 import { auth } from "./Firebase";
 import { useDispatch } from "react-redux";
 import { loginActions } from "../../store/firebase-slice";
-import { useNavigate, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import classes from "./Login.module.css";
 
 const Login = () => {

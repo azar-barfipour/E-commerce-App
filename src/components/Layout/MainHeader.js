@@ -63,17 +63,10 @@ const MainHeader = () => {
                 {!isLogin ? "Login" : "Logout"}
               </li>
             </Link>
-            {/* Fixme later  */}
 
             <li className={classes["header__cart"]}>
               <CartButton />
             </li>
-
-            {/* {isLogin && (
-              <li>
-                <CartButton />
-              </li>
-            )} */}
           </ul>
         </nav>
       </header>

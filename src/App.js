@@ -1,6 +1,6 @@
-import { useSelector, useDispatch, ReactReduxContext } from "react-redux";
-import { Routes, Route, Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
 import { uiActions } from "./store/ui-slice";
 import { cartActions } from "./store/cart-slice";
 

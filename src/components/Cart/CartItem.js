@@ -8,19 +8,8 @@ const CartItem = (props) => {
   const [productDetail, setProductDetail] = useState({});
   const { title, quantity, total, price, id } = props.item;
   const dispatch = useDispatch();
-  // console.log(productId);
-  console.log(id);
-
-  // const getProductDetailData = async () => {
-  //   const res = await fetch(
-  //     `https://udemy-redux-99e3b-default-rtdb.firebaseio.com/shoppingItems/items/${productId}.json`
-  //   );
-  //   const productDetailData = await res.json();
-  //   setProductDetail(productDetailData);
-  // };
 
   const addToCartHandler = () => {
-    // getProductDetailData();
     dispatch(
       cartActions.addToCart({
         title,
