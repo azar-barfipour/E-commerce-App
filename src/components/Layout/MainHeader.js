@@ -23,6 +23,7 @@ const MainHeader = () => {
       <header className={classes.header}>
         <Link to="/" className={classes["header__icon"]}>
           <img
+            alt="icon"
             width="100px"
             src="https://www.dastsazkala.com/files/upload/products/larg/%D8%A8%D8%AA%D9%87-%DA%86%D9%82%D9%87-%D9%85%D8%B3%DB%8C-%D9%85%DB%8C%D9%86%D8%A7%DA%A9%D8%A7%D8%B1%DB%8C-%D8%B4%D8%AF%D9%87-%DB%8C-%D9%BE%D8%A7%DB%8C%D9%87-%D8%AF%D8%A7%D8%B1-%D8%AF%DA%A9%D9%88%D8%B1%DB%8C-%DA%A9%D8%AF-LT-11-2365.jpg"
           />

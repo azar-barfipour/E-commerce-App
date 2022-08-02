@@ -1,11 +1,8 @@
 import classes from "./CartItem.module.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
 
 const CartItem = (props) => {
-  const [productDetail, setProductDetail] = useState({});
   const { title, quantity, total, price, id } = props.item;
   const dispatch = useDispatch();
 
