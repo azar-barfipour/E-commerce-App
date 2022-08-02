@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaCartPlus } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
 import Card from "../UI/Card";
@@ -49,7 +49,7 @@ const ProductItem = (props) => {
             </div>
           </Link>
           <button onClick={addToCartHandler} className={classes.cart}>
-            <FaShoppingCart />
+            <FaCartPlus />
           </button>
         </li>
       </Card>

@@ -28,7 +28,6 @@ const Slider = () => {
     <Carousel
       activeIndex={index}
       onSelect={handleSelect}
-      // variant="dark"
       className={classes["carousel"]}
     >
       {items.map((item) => {
@@ -39,10 +38,6 @@ const Slider = () => {
               src={item.src}
               alt="slide"
             />
-            <Carousel.Caption>
-              {/* <h3>{item.id}</h3> */}
-              {/* <p>Sample Text for Image One</p> */}
-            </Carousel.Caption>
           </Carousel.Item>
         );
       })}

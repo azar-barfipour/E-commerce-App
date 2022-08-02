@@ -1,11 +1,15 @@
 .header {
   width: 100%;
-  height: 5rem;
+  height: 6.3rem;
   padding: 0 10%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
 }
 
 .header__icon {
@@ -114,6 +118,9 @@
   transform: scaleX(1);
 }
 
+.header__cart {
+  margin-left: 2rem;
+}
 @media (max-width: 40rem) {
   .header h1 {
     display: none;

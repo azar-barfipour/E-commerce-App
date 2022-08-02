@@ -11,15 +11,11 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_appId,
   measurementId: process.env.REACT_APP_measurementId,
 };
-console.log(firebaseConfig);
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log(app);
 export const auth = getAuth(app);
 
 const provider = new GoogleAuthProvider();
-
-console.log(provider);
 
 export const sighIn = () => {
   signInWithPopup(auth, provider)

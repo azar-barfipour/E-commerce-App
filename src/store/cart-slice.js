@@ -10,36 +10,40 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action) {
       const newItem = action.payload;
-      const existingItems = state.items.find((item) => item.id === newItem.id);
-      state.totalQuantity++;
+      console.log(newItem);
+      console.log(state.items);
+      const existingItems = state.items?.find((item) => item.id === newItem.id);
       if (!existingItems) {
-        state.items.push({
-          id: newItem.id,
-          price: newItem.price,
-          totalPrice: newItem.price,
-          quantity: 1,
-          name: newItem.name,
-        });
+        if (newItem.quantity === undefined) {
+          state.items.push({
+            id: newItem.id,
+            price: newItem.price,
+            totalPrice: newItem.price,
+            quantity: 1,
+            name: newItem.title,
+          });
+          state.totalQuantity++;
+        } else {
+          state.items.push({
+            id: newItem.id,
+            price: newItem.price,
+            totalPrice: newItem.price,
+            quantity: newItem.quantity,
+            name: newItem.title,
+          });
+          state.totalQuantity += newItem.quantity;
+        }
       } else {
-        existingItems.totalPrice += newItem.price;
-        existingItems.quantity++;
-      }
-    },
-    addToCartFromDetail(state, action) {
-      const newItem = action.payload;
-      const existingItems = state.items.find((item) => item.id === newItem.id);
-      state.totalQuantity += newItem.quantity;
-      if (!existingItems) {
-        state.items.push({
-          id: newItem.id,
-          price: newItem.price,
-          totalPrice: newItem.price,
-          quantity: newItem.quantity,
-          name: newItem.name,
-        });
-      } else {
-        existingItems.totalPrice += newItem.price * newItem.quantity;
-        existingItems.quantity += newItem.quantity;
+        if (newItem.quantity === undefined) {
+          console.log(state.totalQuantity);
+          existingItems.totalPrice += newItem.price;
+          existingItems.quantity++;
+          state.totalQuantity++;
+        } else {
+          existingItems.totalPrice += newItem.price * newItem.quantity;
+          existingItems.quantity += newItem.quantity;
+          state.totalQuantity += newItem.quantity;
+        }
       }
     },
     removeFromCart(state, action) {

@@ -65,7 +65,7 @@ const MainHeader = () => {
             </Link>
             {/* Fixme later  */}
 
-            <li>
+            <li className={classes["header__cart"]}>
               <CartButton />
             </li>
 

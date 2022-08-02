@@ -4,10 +4,12 @@
 .title {
   margin: 0.5rem 0;
   font-size: 1rem;
-  color: rgb(48, 56, 65);
+  color: rgb(74, 74, 74);
 }
 .price {
   color: rgb(48, 56, 65);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .actions {
@@ -17,7 +19,7 @@
   padding: 0.5rem;
 }
 .img-wrapper {
-  margin: 1rem auto;
+  margin: 0 auto;
 }
 
 .card-image {
@@ -30,6 +32,7 @@
   left: 0.5rem;
   border: none;
   background-color: transparent;
+  color: rgb(14, 124, 176);
 }
 .cart:hover {
   transform: scale(1.5);

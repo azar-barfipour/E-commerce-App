@@ -1,14 +1,17 @@
 .cart {
-  max-width: 30rem;
+  width: 25rem;
+  max-width: 20rem;
   color: white;
-  background-color: rgb(14, 124, 176);
-  border-radius: 0.5rem;
+  background-color: rgb(69, 146, 182);
+  border-radius: 0.2rem;
   list-style: none;
   padding: 0;
   margin: 0;
-  position: absolute;
+  position: fixed;
   right: 0;
-  top: 5rem;
+  top: 6.3rem;
   z-index: 1000000;
   height: 100%;
+  overflow-y: scroll;
+  padding-bottom: 7rem;
 }

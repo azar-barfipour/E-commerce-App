@@ -1,5 +1,5 @@
 .login-wrapper {
-  padding: 4rem 0;
+  padding: 17rem 0;
   text-align: center;
 }
 
@@ -44,4 +44,28 @@
   background-color: #ebebeb;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
   cursor: not-allowed;
+}
+
+.login-text {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  animation: color-change 5s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: rgb(222, 55, 55);
+  }
+  25% {
+    color: rgb(206, 236, 56);
+  }
+  50% {
+    color: rgb(64, 177, 105);
+  }
+  75% {
+    color: rgb(8, 70, 99);
+  }
+  100% {
+    color: rgb(222, 55, 55);
+  }
 }

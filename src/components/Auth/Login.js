@@ -19,13 +19,13 @@ const Login = () => {
 
   return (
     <div className={classes["login-wrapper"]}>
+      <p className={classes["login-text"]}>Let's start shopping online</p>
       <button
         onClick={sighInHandler}
         className={classes["login-with-google-btn"]}
       >
         Sign In with Google
       </button>
-      {/* <img src="https://c4.wallpaperflare.com/wallpaper/163/916/916/cat-look-fluffy-persian-cat-wallpaper-preview.jpg"></img> */}
     </div>
   );
 };

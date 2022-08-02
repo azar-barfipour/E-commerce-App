@@ -3,26 +3,37 @@
   width: 80%;
   margin: 1rem auto;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 60% 40%;
   border-radius: 0.5rem;
   padding: 1rem;
-  cursor: zoom-in;
+  margin-top: 12rem;
 }
 .detail-wrapper-info {
-  width: 50%;
   margin: 2rem auto;
 }
-.detail-wrapper_img {
-  margin-right: 2rem;
-}
+
 .detail_img {
   width: 100%;
-  min-width: 20rem;
-  max-width: 40rem;
+  min-width: 300px;
+  max-width: 500px;
+  cursor: zoom-in;
 }
 
 .detail_title {
+  font-size: 2rem;
+}
+.detail_price {
+  font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 3rem;
+}
+.detail_desc-btn {
+  margin: 1rem 0;
+}
+.detail_desc {
+  padding: 1rem;
+  color: #1d1d1d;
+  line-height: 2;
 }
 .buttons {
   margin: 3rem auto;
@@ -30,6 +41,7 @@
 .amount {
   display: inline-block;
   margin: 0 1rem;
+  font-weight: 700;
 }
 @media screen and (max-width: 80rem) {
   .detail-wrapper {

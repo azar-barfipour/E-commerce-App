@@ -15,7 +15,6 @@ let isInitial = true;
 function App() {
   const cartVisible = useSelector((state) => state.ui.cartShow);
   const cart = useSelector((state) => state.cart);
-  const background = useSelector((state) => state.background.background);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,7 +23,9 @@ function App() {
         "https://udemy-redux-99e3b-default-rtdb.firebaseio.com/cart.json"
       );
       const data = await res.json();
-      dispatch(cartActions.replaceCart(data));
+      if (data) {
+        dispatch(cartActions.replaceCart(data));
+      }
     };
     getData();
   }, []);
@@ -69,14 +70,7 @@ function App() {
 
   return (
     <Layout>
-      <div
-        style={{
-          backgroundImage: `url(${background})`,
-          height: "800px",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
+      <div>
         <Routes>
           <Route path="/" element={<Products />} />
           <Route path="/detail/:productId" element={<ProductDetail />} />

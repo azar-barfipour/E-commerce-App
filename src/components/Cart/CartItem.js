@@ -1,12 +1,26 @@
 import classes from "./CartItem.module.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const CartItem = (props) => {
+  const [productDetail, setProductDetail] = useState({});
   const { title, quantity, total, price, id } = props.item;
   const dispatch = useDispatch();
+  // console.log(productId);
+  console.log(id);
+
+  // const getProductDetailData = async () => {
+  //   const res = await fetch(
+  //     `https://udemy-redux-99e3b-default-rtdb.firebaseio.com/shoppingItems/items/${productId}.json`
+  //   );
+  //   const productDetailData = await res.json();
+  //   setProductDetail(productDetailData);
+  // };
 
   const addToCartHandler = () => {
+    // getProductDetailData();
     dispatch(
       cartActions.addToCart({
         title,
@@ -23,10 +37,12 @@ const CartItem = (props) => {
   return (
     <li className={classes.item}>
       <header>
-        <h3>{title}</h3>
+        <p>{title}</p>
         <div className={classes.price}>
           ${total.toFixed(2)}{" "}
-          <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span>
+          <div className={classes["item__price"]}>
+            <small>(${price.toFixed(2)}/item)</small>
+          </div>
         </div>
       </header>
       <div className={classes.details}>

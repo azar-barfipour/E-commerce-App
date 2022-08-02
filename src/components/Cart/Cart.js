@@ -5,10 +5,11 @@ import CartItem from "./CartItem";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
+  console.log(cartItems);
   return (
     // <Card className={classes.cart}>
     <ul className={classes.cart}>
-      {cartItems.map((cartItem) => {
+      {cartItems?.map((cartItem) => {
         return (
           <CartItem
             key={cartItem.id}
