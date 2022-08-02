@@ -10,6 +10,7 @@
   z-index: 100;
   top: 0;
   left: 0;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .header__icon {
@@ -124,5 +125,11 @@
 @media (max-width: 40rem) {
   .header h1 {
     display: none;
+  }
+  .header__icon {
+    display: none;
+  }
+  .header__cart {
+    margin-left: 8rem;
   }
 }
