@@ -25,7 +25,7 @@ const CartItem = (props) => {
       <header>
         <p>{title}</p>
         <div className={classes.price}>
-          ${total.toFixed(2)}{" "}
+          ${price.toFixed(2) * quantity}{" "}
           <div className={classes["item__price"]}>
             <small>(${price.toFixed(2)}/item)</small>
           </div>
